@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>চাকরি খুঁজুন | জবইউনিটি</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'hind': ['Hind Siliguri', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#670D2F',
+                        secondary: '#E94560',
+                        dark: '#1A1A2E',
+                        light: '#F9F9F9'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .job-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(103, 13, 47, 0.2);
+        }
+        .filter-card {
+            transition: all 0.3s ease;
+        }
+        .filter-card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="font-hind bg-gray-50 text-dark">
+    <!-- Navbar -->
+    <nav class="bg-primary shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-white text-2xl font-bold flex items-center">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    জবইউনিটি
+                </a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/index.html" class="text-white hover:text-gray-200">হোম</a>
+                    <a href="#" class="text-white font-semibold border-b-2 border-white">চাকরি খুঁজুন</a>
+                    <a href="#" class="text-white hover:text-gray-200">কোম্পানি</a>
+                    <a href="#" class="text-white hover:text-gray-200">রেজিউমি তৈরি করুন</a>
+                    <a href="#" class="bg-secondary text-white px-4 py-2 rounded-md hover:bg-opacity-90">লগইন</a>
+                </div>
+                <button class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Job Search Header -->
+    <div class="bg-white py-8 shadow-sm">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold text-primary mb-2">চাকরি খুঁজুন</h1>
+            <p class="text-gray-600">বাংলাদেশের শীর্ষ কোম্পানিগুলো থেকে বাছাইকৃত চাকরির সুযোগ</p>
+            
+            <div class="mt-6 bg-white rounded-lg shadow-md p-4">
+                <form class="flex flex-col md:flex-row gap-4">
+                    <div class="flex-grow">
+                        <label class="block text-gray-700 mb-2">কী খুঁজতে চান?</label>
+                        <input type="text" placeholder="চাকরির পদ, কীওয়ার্ড বা কোম্পানি" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                    </div>
+                    <div class="w-full md:w-64">
+                        <label class="block text-gray-700 mb-2">লোকেশন</label>
+                        <select class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">সব স্থান</option>
+                            <option value="dhaka">ঢাকা</option>
+                            <option value="chittagong">চট্টগ্রাম</option>
+                            <option value="sylhet">সিলেট</option>
+                            <option value="khulna">খুলনা</option>
+                        </select>
+                    </div>
+                    <div class="w-full md:w-64">
+                        <label class="block text-gray-700 mb-2">ক্যাটাগরি</label>
+                        <select class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                            <option value="">সব ক্যাটাগরি</option>
+                            <option value="it">আইটি/সফটওয়্যার</option>
+                            <option value="marketing">মার্কেটিং</option>
+                            <option value="finance">অর্থ ও ব্যাংকিং</option>
+                            <option value="hr">মানবসম্পদ</option>
+                        </select>
+                    </div>
+                    <div class="flex items-end">
+                        <button class="bg-primary text-white px-6 py-3 rounded-md hover:bg-opacity-90 w-full md:w-auto">
+                            <i class="fas fa-search mr-2"></i> খুঁজুন
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row gap-6">
+            <!-- Filters Sidebar -->
+            <div class="w-full md:w-80">
+                <div class="bg-white p-6 rounded-lg shadow-sm sticky top-4">
+                    <h3 class="text-lg font-semibold mb-4 text-primary">ফিল্টার</h3>
+                    
+                    <!-- Job Type Filter -->
+                    <div class="mb-6 filter-card">
+                        <h4 class="font-medium mb-3">চাকরির ধরন</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">ফুল-টাইম</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">পার্ট-টাইম</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">রিমোট</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">ইন্টার্নশিপ</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience Level -->
+                    <div class="mb-6 filter-card">
+                        <h4 class="font-medium mb-3">অভিজ্ঞতা লেভেল</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">ফ্রেশার</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">১-৩ বছর</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">৪-৬ বছর</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">৭+ বছর</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Salary Range -->
+                    <div class="mb-6 filter-card">
+                        <h4 class="font-medium mb-3">বেতন রেঞ্জ</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">৳২০,০০০ - ৳৪০,০০০</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">৳৪০,০০০ - ৳৭০,০০০</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">৳৭০,০০০ - ৳১,০০,০০০</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">৳১,০০,০০০+</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Posted Date -->
+                    <div class="filter-card">
+                        <h4 class="font-medium mb-3">পোস্টের তারিখ</h4>
+                        <div class="space-y-2">
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">গত ২৪ ঘন্টা</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">গত সপ্তাহ</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                                <span class="ml-2">গত মাস</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Job Listings -->
+            <div class="flex-grow">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-semibold text-primary">২৩৪টি চাকরি পাওয়া গেছে</h3>
+                    <div class="flex items-center">
+                        <span class="mr-2 text-gray-600">সাজান:</span>
+                        <select class="p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-1 focus:ring-primary">
+                            <option>সর্বশেষ</option>
+                            <option>সর্বোচ্চ বেতন</option>
+                            <option>প্রাসঙ্গিকতা</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Job Listing Cards -->
+                <div class="space-y-4">
+                    <!-- Job Card 1 -->
+                    <div class="job-card bg-white p-6 rounded-lg shadow-md border border-gray-100 transition duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <div class="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                                <img src="https://images.pexels.com/photos/262438/pexels-photo-262438.jpeg" alt="Company Logo" class="w-16 h-16 rounded-lg object-cover border border-gray-200">
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex flex-col md:flex-row md:justify-between">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-primary">সিনিয়র সফটওয়্যার ইঞ্জিনিয়ার</h3>
+                                        <p class="text-gray-600">টেকসোলিউশনস ইনক.</p>
+                                    </div>
+                                    <div class="mt-2 md:mt-0">
+                                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">ফুল-টাইম</span>
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-2">অফিস</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 flex flex-wrap gap-4">
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                                        <span>ঢাকা, বাংলাদেশ</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-briefcase text-primary mr-2"></i>
+                                        <span>৩-৫ বছর অভিজ্ঞতা</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-money-bill-wave text-primary mr-2"></i>
+                                        <span>৳১২০,০০০ - ৳১৫০,০০০</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="mt-3 text-gray-700">আমরা একজন অভিজ্ঞ সফটওয়্যার ইঞ্জিনিয়ার খুঁজছি যিনি আমাদের টিমে যোগ দিয়ে ইনোভেটিভ সলিউশন তৈরি করতে সাহায্য করবেন।</p>
+                                
+                                <div class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between">
+                                    <div class="text-sm text-gray-500">
+                                        <i class="far fa-clock mr-1"></i> ২ দিন আগে পোস্ট করা
+                                    </div>
+                                    <a href="#" class="mt-2 md:mt-0 inline-block bg-primary text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition">
+                                        আবেদন করুন <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Job Card 2 -->
+                    <div class="job-card bg-white p-6 rounded-lg shadow-md border border-gray-100 transition duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <div class="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                                <img src="https://images.pexels.com/photos/7374/startup-photos.jpg" alt="Company Logo" class="w-16 h-16 rounded-lg object-cover border border-gray-200">
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex flex-col md:flex-row md:justify-between">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-primary">মার্কেটিং ম্যানেজার</h3>
+                                        <p class="text-gray-600">ডিজিটালগ্রোথ লিমিটেড</p>
+                                    </div>
+                                    <div class="mt-2 md:mt-0">
+                                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">ফুল-টাইম</span>
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded ml-2">রিমোট</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 flex flex-wrap gap-4">
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                                        <span>রিমোট</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-briefcase text-primary mr-2"></i>
+                                        <span>৫+ বছর অভিজ্ঞতা</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-money-bill-wave text-primary mr-2"></i>
+                                        <span>৳৮০,০০০ - ৳১২০,০০০</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="mt-3 text-gray-700">আমাদের মার্কেটিং টিমকে লিড করে কাস্টমার অ্যাকুইজিশন এবং ব্র্যান্ড অ্যাওয়ারনেস বৃদ্ধির জন্য স্ট্র্যাটেজি ডেভেলপ ও ইমপ্লিমেন্ট করুন।</p>
+                                
+                                <div class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between">
+                                    <div class="text-sm text-gray-500">
+                                        <i class="far fa-clock mr-1"></i> ১ সপ্তাহ আগে পোস্ট করা
+                                    </div>
+                                    <a href="#" class="mt-2 md:mt-0 inline-block bg-primary text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition">
+                                        আবেদন করুন <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Job Card 3 -->
+                    <div class="job-card bg-white p-6 rounded-lg shadow-md border border-gray-100 transition duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <div class="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                                <img src="https://images.pexels.com/photos/1595391/pexels-photo-1595391.jpeg" alt="Company Logo" class="w-16 h-16 rounded-lg object-cover border border-gray-200">
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex flex-col md:flex-row md:justify-between">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-primary">ফিনান্সিয়াল অ্যানালিস্ট</h3>
+                                        <p class="text-gray-600">গ্লোবালফাইন্যান্স কর্প</p>
+                                    </div>
+                                    <div class="mt-2 md:mt-0">
+                                        <span class="inline-block bg-green-100 text-green-800 text-xs px-2 py-1 rounded">ফুল-টাইম</span>
+                                        <span class="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded ml-2">অফিস</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 flex flex-wrap gap-4">
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                                        <span>চট্টগ্রাম, বাংলাদেশ</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-briefcase text-primary mr-2"></i>
+                                        <span>২-৪ বছর অভিজ্ঞতা</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-money-bill-wave text-primary mr-2"></i>
+                                        <span>৳৯০,০০০ - ৳১১০,০০০</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="mt-3 text-gray-700">আমাদের কোম্পানির ইনভেস্টমেন্ট ডিসিশন গাইড করার জন্য ফিনান্সিয়াল ডাটা অ্যানালাইসিস এবং রিপোর্ট প্রস্তুত করুন।</p>
+                                
+                                <div class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between">
+                                    <div class="text-sm text-gray-500">
+                                        <i class="far fa-clock mr-1"></i> ৩ দিন আগে পোস্ট করা
+                                    </div>
+                                    <a href="#" class="mt-2 md:mt-0 inline-block bg-primary text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition">
+                                        আবেদন করুন <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Job Card 4 -->
+                    <div class="job-card bg-white p-6 rounded-lg shadow-md border border-gray-100 transition duration-300">
+                        <div class="flex flex-col md:flex-row md:items-start">
+                            <div class="flex-shrink-0 mb-4 md:mb-0 md:mr-6">
+                                <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg" alt="Company Logo" class="w-16 h-16 rounded-lg object-cover border border-gray-200">
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex flex-col md:flex-row md:justify-between">
+                                    <div>
+                                        <h3 class="text-xl font-semibold text-primary">গ্রাফিক ডিজাইনার</h3>
+                                        <p class="text-gray-600">ক্রিয়েটিভ মিডিয়া লিমিটেড</p>
+                                    </div>
+                                    <div class="mt-2 md:mt-0">
+                                        <span class="inline-block bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded">পার্ট-টাইম</span>
+                                        <span class="inline-block bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded ml-2">রিমোট</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4 flex flex-wrap gap-4">
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-map-marker-alt text-primary mr-2"></i>
+                                        <span>রিমোট</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-briefcase text-primary mr-2"></i>
+                                        <span>১-২ বছর অভিজ্ঞতা</span>
+                                    </div>
+                                    <div class="flex items-center text-gray-700">
+                                        <i class="fas fa-money-bill-wave text-primary mr-2"></i>
+                                        <span>৳৩০,০০০ - ৳৪০,০০০</span>
+                                    </div>
+                                </div>
+                                
+                                <p class="mt-3 text-gray-700">আমাদের ডিজাইন টিমের জন্য একজন সৃজনশীল গ্রাফিক ডিজাইনার খুঁজছি যিনি ব্র্যান্ডিং এবং মার্কেটিং ম্যাটেরিয়াল ডিজাইন করতে পারবেন।</p>
+                                
+                                <div class="mt-4 flex flex-col md:flex-row md:items-center md:justify-between">
+                                    <div class="text-sm text-gray-500">
+                                        <i class="far fa-clock mr-1"></i> ৫ দিন আগে পোস্ট করা
+                                    </div>
+                                    <a href="#" class="mt-2 md:mt-0 inline-block bg-primary text-white px-6 py-2 rounded-md hover:bg-opacity-90 transition">
+                                        আবেদন করুন <i class="fas fa-arrow-right ml-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pagination -->
+                <div class="mt-8 flex justify-center">
+                    <nav class="inline-flex rounded-md shadow">
+                        <a href="#" class="px-4 py-2 rounded-l-md border border-gray-300 bg-white text-gray-700 hover:bg-gray-50">
+                            <i class="fas fa-chevron-left"></i>
+                        </a>
+                        <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50 font-medium">১</a>
+                        <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">২</a>
+                        <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-700 hover:bg-gray-50">৩</a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 rounded-r-md">
+                            <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-briefcase mr-2"></i>
+                        জবইউনিটি
+                    </h3>
+                    <p class="mb-4">বাংলাদেশের সেরা চাকরি খোঁজার প্ল্যাটফর্ম। যোগ্যতা অনুযায়ী সেরা চাকরির সুযোগ খুঁজে নিন।</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">দ্রুত লিংক</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/index.html" class="hover:text-white">হোম</a></li>
+                        <li><a href="#" class="hover:text-white">চাকরি খুঁজুন</a></li>
+                        <li><a href="#" class="hover:text-white">কোম্পানি</a></li>
+                        <li><a href="#" class="hover:text-white">ক্যারিয়ার গাইড</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">প্রার্থীদের জন্য</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">প্রোফাইল তৈরি করুন</a></li>
+                        <li><a href="#" class="hover:text-white">রেজিউমি বিল্ডার</a></li>
+                        <li><a href="#" class="hover:text-white">চাকরির অ্যালার্ট</a></li>
+                        <li><a href="#" class="hover:text-white">ক্যারিয়ার টিপস</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">যোগাযোগ</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>১২৩ চাকরি স্ট্রিট, ঢাকা ১২০৫</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span>+৮৮০ ১২৩৪ ৫৬৭৮৯০</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>info@jobunity.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; ২০২৩ জবইউনিটি. সর্বস্বত্ব সংরক্ষিত। | <a href="#" class="hover:text-white">গোপনীয়তা নীতি</a> | <a href="#" class="hover:text-white">সেবার শর্তাবলী</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
