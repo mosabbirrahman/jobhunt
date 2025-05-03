@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ক্যারিয়ার গাইড | জবইউনিটি</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'hind': ['Hind Siliguri', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#670D2F',
+                        secondary: '#E94560',
+                        dark: '#1A1A2E',
+                        light: '#F9F9F9'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(103, 13, 47, 0.2);
+        }
+        .tab-btn.active {
+            background-color: #670D2F;
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-hind bg-gray-50 text-dark">
+    <!-- Navbar -->
+    <nav class="bg-primary shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-white text-2xl font-bold flex items-center">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    জবইউনিটি
+                </a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="./index.html" class="text-white hover:text-gray-200">হোম</a>
+                    <a href="./findjob.html" class="text-white hover:text-gray-200">চাকরি খুঁজুন</a>
+                    <a href="./companyjob.html" class="text-white hover:text-gray-200">কোম্পানি</a>
+                    <a href="./cariar.html" class="text-white font-semibold border-b-2 border-white">ক্যারিয়ার গাইড</a>
+                    <a href="#" class="bg-secondary text-white px-4 py-2 rounded-md hover:bg-opacity-90">লগইন</a>
+                </div>
+                <button class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-3xl md:text-4xl font-bold mb-4">আপনার ক্যারিয়ার গড়ুন সঠিক গাইডলাইন নিয়ে</h1>
+            <p class="text-xl max-w-2xl mx-auto mb-8">ক্যারিয়ার সম্পর্কিত সমস্ত প্রশ্নের উত্তর এবং পেশাদারী পরামর্শ</p>
+            <div class="max-w-2xl mx-auto relative">
+                <input type="text" placeholder="কী জানতে চান? (যেমন: রেজিউমি টিপস, ইন্টারভিউ প্রস্তুতি)" class="w-full p-4 pl-12 text-dark rounded-lg focus:outline-none focus:ring-2 focus:ring-white">
+                <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-500"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+        <!-- Categories Tabs -->
+        <div class="mb-12 overflow-x-auto">
+            <div class="flex space-x-2 pb-2">
+                <button class="tab-btn px-6 py-2 bg-white rounded-full border border-gray-300 hover:bg-primary hover:text-white transition active">সব গাইড</button>
+                <button class="tab-btn px-6 py-2 bg-white rounded-full border border-gray-300 hover:bg-primary hover:text-white transition">রেজিউমি টিপস</button>
+                <button class="tab-btn px-6 py-2 bg-white rounded-full border border-gray-300 hover:bg-primary hover:text-white transition">ইন্টারভিউ প্রস্তুতি</button>
+                <button class="tab-btn px-6 py-2 bg-white rounded-full border border-gray-300 hover:bg-primary hover:text-white transition">ক্যারিয়ার প্ল্যানিং</button>
+                <button class="tab-btn px-6 py-2 bg-white rounded-full border border-gray-300 hover:bg-primary hover:text-white transition">সফট স্কিল</button>
+                <button class="tab-btn px-6 py-2 bg-white rounded-full border border-gray-300 hover:bg-primary hover:text-white transition">স্যালারি নেগোসিয়েশন</button>
+            </div>
+        </div>
+
+        <!-- Featured Articles -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-primary mb-6">ফিচার্ড আর্টিকেল</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Article 1 -->
+                <div class="article-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <img src="https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg" alt="Article Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-primary text-white text-xs px-2 py-1 rounded">রেজিউমি টিপস</span>
+                            <span class="text-gray-500 text-sm ml-auto"><i class="far fa-clock mr-1"></i> ৩ দিন আগে</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">২০২৩ সালে একটি আদর্শ রেজিউমি কিভাবে তৈরি করবেন?</h3>
+                        <p class="text-gray-700 mb-4">আধুনিক সময়ের চাহিদা অনুযায়ী রেজিউমি তৈরির সম্পূর্ণ গাইডলাইন। জানুন কী কী বিষয় অবশ্যই যোগ করতে হবে এবং কী কী বাদ দিতে হবে।</p>
+                        <a href="#" class="text-primary font-medium hover:text-secondary">আরও পড়ুন <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div class="article-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg" alt="Article Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-secondary text-white text-xs px-2 py-1 rounded">ইন্টারভিউ প্রস্তুতি</span>
+                            <span class="text-gray-500 text-sm ml-auto"><i class="far fa-clock mr-1"></i> ১ সপ্তাহ আগে</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">ইন্টারভিউতে সাধারণভাবে জিজ্ঞাসিত ২০টি প্রশ্ন ও উত্তরের গাইড</h3>
+                        <p class="text-gray-700 mb-4">জেনে নিন ইন্টারভিউতে সবচেয়ে বেশি জিজ্ঞাসিত প্রশ্নগুলো এবং কীভাবে সেগুলোর উত্তর দিবেন যা আপনাকে অন্যান্য প্রার্থীদের থেকে এগিয়ে রাখবে।</p>
+                        <a href="#" class="text-primary font-medium hover:text-secondary">আরও পড়ুন <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div class="article-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg" alt="Article Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">ক্যারিয়ার প্ল্যানিং</span>
+                            <span class="text-gray-500 text-sm ml-auto"><i class="far fa-clock mr-1"></i> ২ সপ্তাহ আগে</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">ক্যারিয়ার প্ল্যানিং: ৫টি ধাপে সঠিক পেশা নির্বাচন</h3>
+                        <p class="text-gray-700 mb-4">আপনার ব্যক্তিত্ব, দক্ষতা এবং আগ্রহ অনুযায়ী সঠিক ক্যারিয়ার পথ বেছে নেওয়ার সম্পূর্ণ গাইড। জানুন কীভাবে ৫ বছরের ক্যারিয়ার প্ল্যান তৈরি করবেন।</p>
+                        <a href="#" class="text-primary font-medium hover:text-secondary">আরও পড়ুন <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Career Paths -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-bold text-primary mb-6">জনপ্রিয় ক্যারিয়ার পাথ</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Career Path 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">সফটওয়্যার ইঞ্জিনিয়ারিং</h3>
+                    <p class="text-gray-700 text-sm mb-4">বাংলাদেশে সফটওয়্যার ইঞ্জিনিয়ার হিসেবে ক্যারিয়ার গড়ার সম্পূর্ণ গাইড</p>
+                    <a href="#" class="text-primary text-sm font-medium hover:text-secondary">বিস্তারিত দেখুন</a>
+                </div>
+
+                <!-- Career Path 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">ডিজিটাল মার্কেটিং</h3>
+                    <p class="text-gray-700 text-sm mb-4">ডিজিটাল মার্কেটারে ক্যারিয়ার গড়ার ধাপে ধাপে গাইড</p>
+                    <a href="#" class="text-primary text-sm font-medium hover:text-secondary">বিস্তারিত দেখুন</a>
+                </div>
+
+                <!-- Career Path 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">ব্যাংকিং ও ফাইন্যান্স</h3>
+                    <p class="text-gray-700 text-sm mb-4">ব্যাংকিং সেক্টরে ক্যারিয়ার গড়ার উপায়</p>
+                    <a href="#" class="text-primary text-sm font-medium hover:text-secondary">বিস্তারিত দেখুন</a>
+                </div>
+
+                <!-- Career Path 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">মেডিকেল প্রফেশন</h3>
+                    <p class="text-gray-700 text-sm mb-4">মেডিকেল সেক্টরে বিভিন্ন ক্যারিয়ার অপশন</p>
+                    <a href="#" class="text-primary text-sm font-medium hover:text-secondary">বিস্তারিত দেখুন</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Latest Articles -->
+        <div class="mb-16">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-primary">সর্বশেষ আর্টিকেল</h2>
+                <a href="#" class="text-primary hover:text-secondary">সব আর্টিকেল দেখুন <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Large Article -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 md:col-span-2">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="md:w-1/3">
+                            <img src="https://images.pexels.com/photos/7173021/pexels-photo-7173021.jpeg" alt="Article Image" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6 md:w-2/3">
+                            <div class="flex items-center mb-3">
+                                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">সফট স্কিল</span>
+                                <span class="text-gray-500 text-sm ml-auto"><i class="far fa-clock mr-1"></i> ১ দিন আগে</span>
+                            </div>
+                            <h3 class="text-xl font-bold mb-3">কর্মক্ষেত্রে সফল হওয়ার জন্য ১০টি অপরিহার্য সফট স্কিল</h3>
+                            <p class="text-gray-700 mb-4">প্রযুক্তিগত দক্ষতা যেমনই হোক না কেন, কর্মক্ষেত্রে দীর্ঘস্থায়ী সাফল্যের জন্য সফট স্কিল অপরিহার্য। জানুন কোন ১০টি সফট স্কিল আপনার ক্যারিয়ারকে এগিয়ে নিয়ে যাবে।</p>
+                            <div class="flex items-center">
+                                <img src="https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg" alt="Author" class="w-8 h-8 rounded-full object-cover mr-2">
+                                <span class="text-sm">ড. রাহুল আহমেদ</span>
+                            </div>
+                            <a href="#" class="mt-4 inline-block text-primary font-medium hover:text-secondary">আরও পড়ুন <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Small Article 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-yellow-500 text-white text-xs px-2 py-1 rounded">স্যালারি নেগোসিয়েশন</span>
+                            <span class="text-gray-500 text-sm ml-auto"><i class="far fa-clock mr-1"></i> ৫ দিন আগে</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">কিভাবে চাকরি ইন্টারভিউতে সঠিক বেতন নেগোশিয়েট করবেন?</h3>
+                        <p class="text-gray-700 mb-4">বেতন নিয়ে আলোচনা করা অনেকের জন্যই অস্বস্তিকর। জানুন কীভাবে পেশাদার উপায়ে আপনার যোগ্যতা অনুযায়ী সঠিক বেতন পেতে নেগোশিয়েট করবেন।</p>
+                        <a href="#" class="text-primary font-medium hover:text-secondary">আরও পড়ুন <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Small Article 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden border border-gray-100">
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded">ক্যারিয়ার প্ল্যানিং</span>
+                            <span class="text-gray-500 text-sm ml-auto"><i class="far fa-clock mr-1"></i> ১ সপ্তাহ আগে</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">ফ্রেশার হিসেবে প্রথম চাকরি পাওয়ার গাইড</h3>
+                        <p class="text-gray-700 mb-4">অভিজ্ঞতা না থাকলেও কীভাবে আপনার প্রথম চাকরি পেতে পারেন? জানুন ফ্রেশারদের জন্য বিশেষ টিপস এবং কৌশল।</p>
+                        <a href="#" class="text-primary font-medium hover:text-secondary">আরও পড়ুন <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Career Tools -->
+        <div class="bg-primary text-white rounded-xl p-8 mb-12">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold mb-4">আমাদের ক্যারিয়ার টুলস ব্যবহার করুন</h2>
+                    <p class="mb-4">ক্যারিয়ার গাইডের পাশাপাশি আমরা আপনাকে বিশেষ টুলস প্রদান করি যা আপনার ক্যারিয়ার পরিকল্পনাকে আরও সহজ করবে।</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="#" class="bg-white text-primary px-4 py-2 rounded-md hover:bg-opacity-90">রেজিউমি বিল্ডার</a>
+                        <a href="#" class="bg-white bg-opacity-20 text-white px-4 py-2 rounded-md hover:bg-opacity-30">ক্যারিয়ার অ্যাসেসমেন্ট</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://images.pexels.com/photos/669615/pexels-photo-669615.jpeg" alt="Career Tools" class="w-64 h-64 object-cover rounded-lg shadow-lg">
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-primary mb-6">সচরাচর জিজ্ঞাসিত প্রশ্ন</h2>
+            
+            <div class="space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="font-semibold text-lg">ফ্রেশার হিসেবে কীভাবে চাকরির জন্য আবেদন করব?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="mt-3 text-gray-700 hidden">
+                        <p>ফ্রেশার হিসেবে চাকরি পাওয়ার জন্য প্রথমেই আপনার একটি ভালো রেজিউমি তৈরি করতে হবে যেখানে আপনার একাডেমিক কৃতিত্ব, প্রজেক্ট বা ইন্টার্নশিপের অভিজ্ঞতা (যদি থাকে) এবং দক্ষতাগুলো হাইলাইট করা থাকবে। নেটওয়ার্কিং গুরুত্বপূর্ণ - লিংকডইন প্রোফাইল আপডেট করুন, ক্যারিয়ার ফেয়ারে অংশগ্রহণ করুন। এন্ট্রি-লেভেল পজিশনের জন্য আবেদন করুন এবং ইন্টারভিউয়ের জন্য ভালোভাবে প্রস্তুতি নিন।</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="font-semibold text-lg">কীভাবে ক্যারিয়ার পরিবর্তন করব?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="mt-3 text-gray-700 hidden">
+                        <p>ক্যারিয়ার পরিবর্তন একটি বড় সিদ্ধান্ত এবং সঠিক পরিকল্পনা প্রয়োজন। প্রথমে নতুন ফিল্ড সম্পর্কে সম্পূর্ণ রিসার্চ করুন। আপনার বিদ্যমান দক্ষতাগুলো নতুন ফিল্ডে কীভাবে ট্রান্সফার করা যায় তা চিহ্নিত করুন। প্রয়োজনীয় অতিরিক্ত প্রশিক্ষণ বা সার্টিফিকেশন নিন। নেটওয়ার্কিং করুন এবং নতুন ফিল্ডের প্রফেশনালদের সাথে কথা বলুন। ধাপে ধাপে পরিবর্তন আনতে পারেন - পার্ট-টাইম কাজ বা ফ্রিল্যান্সিং দিয়ে শুরু করতে পারেন।</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <button class="flex justify-between items-center w-full text-left">
+                        <h3 class="font-semibold text-lg">ইন্টারভিউয়ের জন্য কীভাবে প্রস্তুতি নেব?</h3>
+                        <i class="fas fa-chevron-down text-primary"></i>
+                    </button>
+                    <div class="mt-3 text-gray-700 hidden">
+                        <p>ইন্টারভিউ প্রস্তুতির জন্য প্রথমে কোম্পানি এবং পজিশন সম্পর্কে ভালোভাবে রিসার্চ করুন। সাধারণ ইন্টারভিউ প্রশ্নগুলোর উত্তর প্রস্তুত করুন। আপনার রেজিউমিতে উল্লেখিত প্রতিটি বিষয়ে ভালোভাবে জানুন। প্র্যাকটিস ইন্টারভিউ দিন বন্ধু বা পরিবারের সদস্যদের সাথে। উপযুক্ত পোশাক পরুন এবং সময়মতো পৌঁছান। কিছু সাধারণ প্রশ্নের উত্তর প্রস্তুত রাখুন যেমন "আপনার সম্পর্কে বলুন", "আপনার শক্তি ও দুর্বলতাগুলো কী" ইত্যাদি।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold text-primary mb-2">আমাদের নিউজলেটারে সাবস্ক্রাইব করুন</h2>
+            <p class="text-gray-700 mb-6">সর্বশেষ ক্যারিয়ার টিপস, চাকরির সুযোগ এবং ইন্ডাস্ট্রি আপডেট পেতে ইমেইল দিয়ে সাবস্ক্রাইব করুন</p>
+            <div class="max-w-md mx-auto flex">
+                <input type="email" placeholder="আপনার ইমেইল ঠিকানা" class="flex-grow p-3 border border-gray-300 rounded-l-md focus:outline-none focus:ring-1 focus:ring-primary">
+                <button class="bg-primary text-white px-6 py-3 rounded-r-md hover:bg-opacity-90">সাবস্ক্রাইব</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-briefcase mr-2"></i>
+                        জবইউনিটি
+                    </h3>
+                    <p class="mb-4">বাংলাদেশের সেরা চাকরি খোঁজার প্ল্যাটফর্ম। যোগ্যতা অনুযায়ী সেরা চাকরির সুযোগ খুঁজে নিন।</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">ক্যারিয়ার গাইড</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">রেজিউমি টিপস</a></li>
+                        <li><a href="#" class="hover:text-white">ইন্টারভিউ প্রস্তুতি</a></li>
+                        <li><a href="#" class="hover:text-white">ক্যারিয়ার প্ল্যানিং</a></li>
+                        <li><a href="#" class="hover:text-white">সফট স্কিল ডেভেলপমেন্ট</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">দরকারী লিংক</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">চাকরি খুঁজুন</a></li>
+                        <li><a href="#" class="hover:text-white">কোম্পানি প্রোফাইল</a></li>
+                        <li><a href="#" class="hover:text-white">রেজিউমি বিল্ডার</a></li>
+                        <li><a href="#" class="hover:text-white">ব্লগ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">যোগাযোগ</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>১২৩ চাকরি স্ট্রিট, ঢাকা ১২০৫</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span>+৮৮০ ১২৩৪ ৫৬৭৮৯০</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>info@jobunity.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; ২০২৩ জবইউনিটি. সর্বস্বত্ব সংরক্ষিত। | <a href="#" class="hover:text-white">গোপনীয়তা নীতি</a> | <a href="#" class="hover:text-white">সেবার শর্তাবলী</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab button active state toggle
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelectorAll('.tab-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+            });
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.bg-white button').forEach(button => {
+            button.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                content.classList.toggle('hidden');
+                const icon = this.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        });
+    </script>
+</body>
+</html>
