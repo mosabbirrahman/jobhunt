@@ -39,7 +39,7 @@
 </head>
 <body class="font-hind bg-gray-50 text-dark">
     <!-- Navbar -->
-    <nav class="bg-primary shadow-lg">
+    <!-- <nav class="bg-primary shadow-lg">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <a href="#" class="text-white text-2xl font-bold flex items-center">
@@ -51,17 +51,68 @@
                     <a href="./findjob.html" class="text-white font-semibold border-b-2 border-white">চাকরি খুঁজুন</a>
                     <a href="./companyjob.html" class="text-white hover:text-gray-200">কোম্পানি</a>
                     <a href="./cariar.html" class="text-white hover:text-gray-200">রেজিউমি তৈরি করুন</a>
-                    <a href="#" class="bg-secondary text-white px-4 py-2 rounded-md hover:bg-opacity-90">লগইন</a>
+                    <a href="./ourrelation.html" class="bg-secondary text-white px-4 py-2 rounded-md hover:bg-opacity-90">লগইন</a>
                 </div>
                 <button class="md:hidden text-white text-2xl">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
+    </nav> -->
+    <!-- Navbar -->
+    <nav class="bg-primary fixed top-0 w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="#" class="text-white text-2xl font-bold flex items-center">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    জবইউনিটি
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <ul class="flex space-x-6">
+                        <li><a href="./index.html" class="text-white hover:text-secondary font-medium transition">হোম</a></li>
+                        <li><a href="./findjob.html" class="text-white hover:text-secondary font-medium transition">চাকরি খুঁজুন</a></li>
+                        <li><a href="./companyjob.html" class="text-white hover:text-secondary font-medium transition">কোম্পানি</a></li>
+                        <li><a href="./cariar.html" class="text-white hover:text-secondary font-medium transition">ক্যারিয়ার গাইড</a></li>
+                        <li><a href="./ourrelation.html" class="text-white hover:text-secondary font-medium transition">আমাদের সম্পর্কে</a></li>
+                    </ul>
+                    <div class="flex space-x-4 ml-6">
+                        <a href="#" class="bg-secondary text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition shadow-lg">নিয়োগকর্তা</a>
+                        <a href="./login.html" class="glass-effect text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:bg-opacity-20 transition">লগইন / রেজিস্টার</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <ul class="space-y-3">
+                    <li><a href="./index.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">হোম</a></li>
+                    <li><a href="./findjob.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">চাকরি খুঁজুন</a></li>
+                    <li><a href="./companyjob.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">কোম্পানি</a></li>
+                    <li><a href="./cariar.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">ক্যারিয়ার গাইড</a></li>
+                    <li><a href="./ourrelation.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">আমাদের সম্পর্কে</a></li>
+                </ul>
+                <div class="mt-4 space-y-3">
+                    <a href="./niyog.html" class="block text-center bg-secondary text-white px-4 py-2 rounded-full font-medium">নিয়োগকর্তা</a>
+                    <a href="./login.html" class="block text-center glass-effect text-white px-4 py-2 rounded-full font-medium">লগইন / রেজিস্টার</a>
+                </div>
+            </div>
+        </div>
     </nav>
 
     <!-- Job Search Header -->
-    <div class="bg-white py-8 shadow-sm">
+    <div class="bg-white py-24 shadow-sm">
         <div class="container mx-auto px-4">
             <h1 class="text-3xl font-bold text-primary mb-2">চাকরি খুঁজুন</h1>
             <p class="text-gray-600">বাংলাদেশের শীর্ষ কোম্পানিগুলো থেকে বাছাইকৃত চাকরির সুযোগ</p>
@@ -452,7 +503,7 @@
                         <li><a href="./index.html" class="hover:text-white">হোম</a></li>
                         <li><a href="./findjob.html" class="hover:text-white">চাকরি খুঁজুন</a></li>
                         <li><a href="./companyjob.html" class="hover:text-white">কোম্পানি</a></li>
-                        <li><a href="#" class="hover:text-white">ক্যারিয়ার গাইড</a></li>
+                        <li><a href="./cariar.html" class="hover:text-white">ক্যারিয়ার গাইড</a></li>
                     </ul>
                 </div>
                 

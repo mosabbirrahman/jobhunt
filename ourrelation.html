@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>আমাদের সম্পর্কে | জবইউনিটি</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'hind': ['Hind Siliguri', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#670D2F',
+                        secondary: '#E94560',
+                        dark: '#1A1A2E',
+                        light: '#F9F9F9'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(103, 13, 47, 0.2);
+        }
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 24px;
+            height: 100%;
+            width: 2px;
+            background: #670D2F;
+        }
+    </style>
+</head>
+<body class="font-hind bg-gray-50 text-dark">
+    <!-- Navbar -->
+    <!-- <nav class="bg-primary shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-white text-2xl font-bold flex items-center">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    জবইউনিটি
+                </a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="./index.html" class="text-white hover:text-gray-200">হোম</a>
+                    <a href="./findjob.html" class="text-white hover:text-gray-200">চাকরি খুঁজুন</a>
+                    <a href="./companyjob.html" class="text-white hover:text-gray-200">কোম্পানি</a>
+                    <a href="./cariar.html" class="text-white hover:text-gray-200">ক্যারিয়ার গাইড</a>
+                    <a href="./ourrelation.html" class="text-white font-semibold border-b-2 border-white">আমাদের সম্পর্কে</a>
+                    <a href="#" class="bg-secondary text-white px-4 py-2 rounded-md hover:bg-opacity-90">লগইন</a>
+                </div>
+                <button class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav> -->
+
+        <!-- Navbar -->
+        <nav class="bg-primary fixed top-0 w-full z-50 shadow-lg">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center py-4">
+                    <!-- Logo -->
+                    <a href="#" class="text-white text-2xl font-bold flex items-center">
+                        <i class="fas fa-briefcase mr-2"></i>
+                        জবইউনিটি
+                    </a>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <ul class="flex space-x-6">
+                            <li><a href="./index.html" class="text-white hover:text-secondary font-medium transition">হোম</a></li>
+                            <li><a href="./findjob.html" class="text-white hover:text-secondary font-medium transition">চাকরি খুঁজুন</a></li>
+                            <li><a href="./companyjob.html" class="text-white hover:text-secondary font-medium transition">কোম্পানি</a></li>
+                            <li><a href="./cariar.html" class="text-white hover:text-secondary font-medium transition">ক্যারিয়ার গাইড</a></li>
+                            <li><a href="./ourrelation.html" class="text-white hover:text-secondary font-medium transition">আমাদের সম্পর্কে</a></li>
+                        </ul>
+                        <div class="flex space-x-4 ml-6">
+                            <a href="./niyog.html" class="bg-secondary text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition shadow-lg">নিয়োগকর্তা</a>
+                            <a href="./login.html" class="glass-effect text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:bg-opacity-20 transition">লগইন / রেজিস্টার</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden">
+                        <button id="menu-toggle" class="text-white focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4">
+                    <ul class="space-y-3">
+                        <li><a href="./index.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">হোম</a></li>
+                        <li><a href="./findjob.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">চাকরি খুঁজুন</a></li>
+                        <li><a href="./companyjob.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">কোম্পানি</a></li>
+                        <li><a href="./cariar.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">ক্যারিয়ার গাইড</a></li>
+                        <li><a href="./ourrelation.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">আমাদের সম্পর্কে</a></li>
+                    </ul>
+                    <div class="mt-4 space-y-3">
+                        <a href="#" class="block text-center bg-secondary text-white px-4 py-2 rounded-full font-medium">নিয়োগকর্তা</a>
+                        <a href="./login.html" class="block text-center glass-effect text-white px-4 py-2 rounded-full font-medium">লগইন / রেজিস্টার</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-r from-primary to-secondary text-white py-40 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-full h-full bg-repeat" style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><text x=\"10\" y=\"50\" font-family=\"Arial\" font-size=\"20\" fill=\"white\">জবইউনিটি</text></svg>')";></div>
+        </div>
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">আমাদের সম্পর্কে</h1>
+            <p class="text-xl md:text-2xl max-w-3xl mx-auto">বাংলাদেশের সেরা চাকরি খোঁজার প্ল্যাটফর্ম হিসেবে আমরা কাজ করছি</p>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="container mx-auto px-4 py-16">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt="About Us" class="rounded-xl shadow-lg w-full h-auto">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-bold text-primary mb-6">জবইউনিটি সম্পর্কে</h2>
+                <p class="text-gray-700 mb-4">জবইউনিটি বাংলাদেশের একটি অগ্রণী চাকরি খোঁজার প্ল্যাটফর্ম যেখানে চাকরি প্রার্থী এবং নিয়োগকর্তাদের মধ্যে সেতুবন্ধন তৈরি করা হয়। আমাদের মিশন হল সঠিক চাকরি প্রার্থীকে সঠিক চাকরির সাথে সংযুক্ত করা।</p>
+                <p class="text-gray-700 mb-6">২০১৫ সালে প্রতিষ্ঠিত হওয়ার পর থেকে আমরা হাজার হাজার চাকরি প্রার্থীকে তাদের স্বপ্নের চাকরি খুঁজে পেতে সাহায্য করেছি এবং শতাধিক কোম্পানিকে তাদের জন্য উপযুক্ত প্রার্থী খুঁজে পেতে সহায়তা করেছি।</p>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
+                        <div class="text-3xl text-primary font-bold mb-2">৫০,০০০+</div>
+                        <div class="text-gray-700">নিবন্ধিত প্রার্থী</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
+                        <div class="text-3xl text-primary font-bold mb-2">১,২০০+</div>
+                        <div class="text-gray-700">নিয়োগকর্তা কোম্পানি</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
+                        <div class="text-3xl text-primary font-bold mb-2">১০,০০০+</div>
+                        <div class="text-gray-700">চাকরির সুযোগ</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg shadow-sm border border-gray-100 text-center">
+                        <div class="text-3xl text-primary font-bold mb-2">৯৫%</div>
+                        <div class="text-gray-700">সাফল্যের হার</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Mission -->
+    <div class="bg-primary text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-4">আমাদের মিশন ও ভিশন</h2>
+                <p class="max-w-2xl mx-auto">আমরা বিশ্বাস করি যে প্রত্যেকেরই যোগ্যতা অনুযায়ী সঠিক ক্যারিয়ার গড়ার সুযোগ পাওয়া উচিত</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <div class="text-4xl mb-4">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">আমাদের মিশন</h3>
+                    <p>বাংলাদেশের চাকরি বাজারে একটি কার্যকর সেতুবন্ধন তৈরি করা যেখানে চাকরি প্রার্থীরা তাদের যোগ্যতা অনুযায়ী সেরা চাকরির সুযোগ পাবে এবং নিয়োগকর্তারা তাদের জন্য উপযুক্ত প্রার্থী খুঁজে পাবে।</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <div class="text-4xl mb-4">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">আমাদের ভিশন</h3>
+                    <p>২০২৫ সালের মধ্যে বাংলাদেশের সবচেয়ে নির্ভরযোগ্য চাকরি প্ল্যাটফর্ম হিসেবে প্রতিষ্ঠিত হওয়া এবং দেশের প্রতিটি জেলায় আমাদের সেবা পৌঁছে দেওয়া।</p>
+                </div>
+                
+                <div class="bg-white bg-opacity-10 p-6 rounded-lg">
+                    <div class="text-4xl mb-4">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">আমাদের মূল্যবোধ</h3>
+                    <p>আমরা বিশ্বাস করি স্বচ্ছতা, নিষ্ঠা এবং উদ্ভাবনী চিন্তার মাধ্যমে আমরা বাংলাদেশের চাকরি বাজারে একটি ইতিবাচক পরিবর্তন আনতে পারি।</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Story -->
+    <div class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center text-primary mb-12">আমাদের যাত্রা</h2>
+        
+        <div class="relative max-w-3xl mx-auto">
+            <!-- Timeline Item 1 -->
+            <div class="timeline-item relative pl-8 pb-12">
+                <div class="absolute left-0 w-4 h-4 rounded-full bg-primary z-10"></div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <h3 class="text-xl font-bold text-primary mb-2">২০১৫ - যাত্রা শুরু</h3>
+                    <p class="text-gray-700">ঢাকার একটি ছোট অফিস থেকে মাত্র ৫ জন কর্মী নিয়ে জবইউনিটির যাত্রা শুরু। প্রথম বছরে আমরা ৫০টি কোম্পানিকে এবং ২,০০০ চাকরি প্রার্থীকে আমাদের প্ল্যাটফর্মে যুক্ত করতে সক্ষম হই।</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 2 -->
+            <div class="timeline-item relative pl-8 pb-12">
+                <div class="absolute left-0 w-4 h-4 rounded-full bg-primary z-10"></div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <h3 class="text-xl font-bold text-primary mb-2">২০১৭ - প্রথম মাইলফলক</h3>
+                    <p class="text-gray-700">১০,০০০ নিবন্ধিত ব্যবহারকারীর মাইলফলক অতিক্রম এবং প্রথম আন্তর্জাতিক কোম্পানিকে আমাদের প্ল্যাটফর্মে যুক্ত করা। এই বছর আমরা আমাদের প্রথম মোবাইল অ্যাপ্লিকেশন চালু করি।</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 3 -->
+            <div class="timeline-item relative pl-8 pb-12">
+                <div class="absolute left-0 w-4 h-4 rounded-full bg-primary z-10"></div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <h3 class="text-xl font-bold text-primary mb-2">২০১৯ - দেশব্যাপী সম্প্রসারণ</h3>
+                    <p class="text-gray-700">চট্টগ্রাম এবং সিলেটে আঞ্চলিক অফিস খোলা। এই বছর আমরা প্রথমবারের মতো ক্যারিয়ার ফেয়ার আয়োজন করি যেখানে ৫০+ কোম্পানি এবং ৩,০০০+ চাকরি প্রার্থী অংশগ্রহণ করে।</p>
+                </div>
+            </div>
+            
+            <!-- Timeline Item 4 -->
+            <div class="timeline-item relative pl-8">
+                <div class="absolute left-0 w-4 h-4 rounded-full bg-primary z-10"></div>
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+                    <h3 class="text-xl font-bold text-primary mb-2">২০২৩ - বর্তমান অবস্থান</h3>
+                    <p class="text-gray-700">বর্তমানে আমরা বাংলাদেশের শীর্ষ ৩ চাকরি প্ল্যাটফর্মের একটি, যেখানে ৫০,০০০+ নিবন্ধিত প্রার্থী এবং ১,২০০+ কোম্পানি আমাদের সেবা ব্যবহার করছে। আমরা প্রতিমাসে গড়ে ৫০০+ চাকরি পোস্ট করি এবং ৩০০+ সফল নিয়োগে সহায়তা করি।</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Our Team -->
+    <div class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">আমাদের টিম</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Team Member 1 -->
+                <div class="team-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <img src="https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg" alt="Team Member" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-1">আহমেদ রহমান</h3>
+                        <p class="text-primary font-medium mb-3">প্রতিষ্ঠাতা ও সিইও</p>
+                        <p class="text-gray-700 text-sm mb-4">১০+ বছর অভিজ্ঞতা সহ একজন উদ্যোক্তা এবং এইচআর বিশেষজ্ঞ</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 2 -->
+                <div class="team-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Team Member" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-1">সুমাইয়া ইসলাম</h3>
+                        <p class="text-primary font-medium mb-3">প্রযুক্তি পরিচালক</p>
+                        <p class="text-gray-700 text-sm mb-4">সফটওয়্যার ডেভেলপমেন্ট এবং ডাটা সায়েন্সে বিশেষজ্ঞ</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 3 -->
+                <div class="team-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg" alt="Team Member" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-1">রাজীব হাসান</h3>
+                        <p class="text-primary font-medium mb-3">বিপণন প্রধান</p>
+                        <p class="text-gray-700 text-sm mb-4">ডিজিটাল মার্কেটিং এবং ব্র্যান্ডিং বিশেষজ্ঞ</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Team Member 4 -->
+                <div class="team-card bg-white rounded-xl shadow-md overflow-hidden border border-gray-100 transition duration-300">
+                    <img src="https://images.pexels.com/photos/3777946/pexels-photo-3777946.jpeg" alt="Team Member" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-1">নুসরাত জাহান</h3>
+                        <p class="text-primary font-medium mb-3">গ্রাহক সেবা প্রধান</p>
+                        <p class="text-gray-700 text-sm mb-4">১০ বছর অভিজ্ঞতা সহ গ্রাহক সেবা পেশাদার</p>
+                        <div class="flex justify-center space-x-3">
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-500 hover:text-primary"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="container mx-auto px-4 py-16">
+        <h2 class="text-3xl font-bold text-center text-primary mb-12">আমাদের সম্পর্কে বলেন তারা</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="flex items-center mb-4">
+                    <div class="text-4xl text-primary font-serif mr-4">"</div>
+                    <div>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="italic text-gray-700 mb-6">"জবইউনিটির মাধ্যমে আমি আমার বর্তমান চাকরিটি পেয়েছি। তাদের প্ল্যাটফর্ম ব্যবহার করা খুব সহজ এবং তারা সত্যিই চাকরি প্রার্থীদের সাহায্য করতে আন্তরিক।"</p>
+                <div class="flex items-center">
+                    <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg" alt="Testimonial" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-semibold">সারাহ জাহান</h4>
+                        <p class="text-gray-600 text-sm">সফটওয়্যার ইঞ্জিনিয়ার, টেকভিশন</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="flex items-center mb-4">
+                    <div class="text-4xl text-primary font-serif mr-4">"</div>
+                    <div>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                        </div>
+                    </div>
+                </div>
+                <p class="italic text-gray-700 mb-6">"আমাদের কোম্পানির জন্য সঠিক প্রার্থী খুঁজে পেতে জবইউনিটি অত্যন্ত সহায়ক হয়েছে। তাদের সার্ভিসের গুণগত মান এবং গ্রাহক সেবা প্রশংসনীয়।"</p>
+                <div class="flex items-center">
+                    <img src="https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg" alt="Testimonial" class="w-12 h-12 rounded-full object-cover mr-4">
+                    <div>
+                        <h4 class="font-semibold">ডেভিড রহমান</h4>
+                        <p class="text-gray-600 text-sm">এইচআর ডিরেক্টর, ইনোভেটকো</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="bg-primary text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">আমাদের সাথে যুক্ত হোন</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">আপনি চাকরি প্রার্থী হোন বা নিয়োগকর্তা, জবইউনিটি আপনাকে সঠিক সিদ্ধান্ত নিতে সাহায্য করবে</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#" class="inline-block bg-white text-primary px-8 py-3 rounded-md font-medium hover:bg-opacity-90">চাকরি খুঁজুন</a>
+                <a href="#" class="inline-block border-2 border-white text-white px-8 py-3 rounded-md font-medium hover:bg-white hover:bg-opacity-10">কোম্পানি রেজিস্টার করুন</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-briefcase mr-2"></i>
+                        জবইউনিটি
+                    </h3>
+                    <p class="mb-4">বাংলাদেশের সেরা চাকরি খোঁজার প্ল্যাটফর্ম। যোগ্যতা অনুযায়ী সেরা চাকরির সুযোগ খুঁজে নিন।</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">জবইউনিটি</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">আমাদের সম্পর্কে</a></li>
+                        <li><a href="#" class="hover:text-white">ক্যারিয়ার</a></li>
+                        <li><a href="#" class="hover:text-white">ব্লগ</a></li>
+                        <li><a href="#" class="hover:text-white">যোগাযোগ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">সাহায্য</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">সচরাচর জিজ্ঞাসিত প্রশ্ন</a></li>
+                        <li><a href="#" class="hover:text-white">গ্রাহক সেবা</a></li>
+                        <li><a href="#" class="hover:text-white">গোপনীয়তা নীতি</a></li>
+                        <li><a href="#" class="hover:text-white">সেবার শর্তাবলী</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">যোগাযোগ</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>১২৩ চাকরি স্ট্রিট, ঢাকা ১২০৫</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span>+৮৮০ ১২৩৪ ৫৬৭৮৯০</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>info@jobunity.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; ২০২৩ জবইউনিটি. সর্বস্বত্ব সংরক্ষিত। | <a href="#" class="hover:text-white">গোপনীয়তা নীতি</a> | <a href="#" class="hover:text-white">সেবার শর্তাবলী</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

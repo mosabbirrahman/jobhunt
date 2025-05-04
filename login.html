@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>লগইন / রেজিস্টার | জবইউনিটি</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'hind': ['Hind Siliguri', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: '#670D2F',
+                        secondary: '#E94560',
+                        dark: '#1A1A2E',
+                        light: '#F9F9F9'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .auth-tab.active {
+            background-color: #670D2F;
+            color: white;
+        }
+        .form-input:focus {
+            border-color: #670D2F;
+            box-shadow: 0 0 0 2px rgba(103, 13, 47, 0.2);
+        }
+        .social-btn:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="font-hind bg-gray-50">
+    <!-- Navbar -->
+    <!-- <nav class="bg-primary shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-white text-2xl font-bold flex items-center">
+                    <i class="fas fa-briefcase mr-2"></i>
+                    জবইউনিটি
+                </a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="./index.html" class="text-white hover:text-gray-200">হোম</a>
+                    <a href="./findjob.html" class="text-white hover:text-gray-200">চাকরি খুঁজুন</a>
+                    <a href="./companyjob.html" class="text-white hover:text-gray-200">কোম্পানি</a>
+                    <a href="./cariar.html" class="text-white hover:text-gray-200">ক্যারিয়ার গাইড</a>
+                    <a href="./login.html" class="text-white border-b-2 border-white">লগইন</a>
+                </div>
+                <button class="md:hidden text-white text-2xl">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav> -->
+        <!-- Navbar -->
+        <nav class="bg-primary fixed top-0 w-full z-50 shadow-lg">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center py-4">
+                    <!-- Logo -->
+                    <a href="#" class="text-white text-2xl font-bold flex items-center">
+                        <i class="fas fa-briefcase mr-2"></i>
+                        জবইউনিটি
+                    </a>
+                    
+                    <!-- Desktop Menu -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <ul class="flex space-x-6">
+                            <li><a href="./index.html" class="text-white hover:text-secondary font-medium transition">হোম</a></li>
+                            <li><a href="./findjob.html" class="text-white hover:text-secondary font-medium transition">চাকরি খুঁজুন</a></li>
+                            <li><a href="./companyjob.html" class="text-white hover:text-secondary font-medium transition">কোম্পানি</a></li>
+                            <li><a href="./cariar.html" class="text-white hover:text-secondary font-medium transition">ক্যারিয়ার গাইড</a></li>
+                            <li><a href="./ourrelation.html" class="text-white hover:text-secondary font-medium transition">আমাদের সম্পর্কে</a></li>
+                        </ul>
+                        <div class="flex space-x-4 ml-6">
+                            <a href="./niyog.html" class="bg-secondary text-white px-4 py-2 rounded-full font-medium hover:bg-opacity-90 transition shadow-lg">নিয়োগকর্তা</a>
+                            <a href="./login.html" class="glass-effect text-white px-4 py-2 rounded-full font-medium hover:bg-white hover:bg-opacity-20 transition">লগইন / রেজিস্টার</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <div class="md:hidden">
+                        <button id="menu-toggle" class="text-white focus:outline-none">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Menu -->
+                <div id="mobile-menu" class="hidden md:hidden pb-4">
+                    <ul class="space-y-3">
+                        <li><a href="./index.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">হোম</a></li>
+                        <li><a href="./findjob.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">চাকরি খুঁজুন</a></li>
+                        <li><a href="./companyjob.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">কোম্পানি</a></li>
+                        <li><a href="./cariar.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">ক্যারিয়ার গাইড</a></li>
+                        <li><a href="./ourrelation.html" class="block text-white hover:bg-white hover:bg-opacity-10 px-3 py-2 rounded transition">আমাদের সম্পর্কে</a></li>
+                    </ul>
+                    <div class="mt-4 space-y-3">
+                        <a href="./niyog.html" class="block text-center bg-secondary text-white px-4 py-2 rounded-full font-medium">নিয়োগকর্তা</a>
+                        <a href="./login.html" class="block text-center glass-effect text-white px-4 py-2 rounded-full font-medium">লগইন / রেজিস্টার</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    
+
+    <!-- Auth Section -->
+    <div class="container mx-auto px-4 py-40">
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+            <!-- Tabs -->
+            <div class="flex border-b">
+                <button id="login-tab" class="auth-tab flex-1 py-4 font-medium text-center active">লগইন</button>
+                <button id="register-tab" class="auth-tab flex-1 py-4 font-medium text-center">রেজিস্টার</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="login-form" class="p-6">
+                <h2 class="text-2xl font-bold text-primary mb-6">আপনার অ্যাকাউন্টে লগইন করুন</h2>
+                
+                <form>
+                    <div class="mb-4">
+                        <label for="login-email" class="block text-gray-700 mb-2">ইমেইল ঠিকানা</label>
+                        <input type="email" id="login-email" class="form-input w-full p-3 border border-gray-300 rounded-md focus:outline-none" placeholder="আপনার ইমেইল ঠিকানা">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="login-password" class="block text-gray-700 mb-2">পাসওয়ার্ড</label>
+                        <input type="password" id="login-password" class="form-input w-full p-3 border border-gray-300 rounded-md focus:outline-none" placeholder="আপনার পাসওয়ার্ড">
+                        <div class="flex justify-end mt-1">
+                            <a href="#" class="text-sm text-primary hover:text-secondary">পাসওয়ার্ড ভুলে গেছেন?</a>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-md hover:bg-opacity-90 mb-4">লগইন করুন</button>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="flex-grow border-t border-gray-300"></div>
+                        <span class="mx-4 text-gray-500">অথবা</span>
+                        <div class="flex-grow border-t border-gray-300"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <a href="#" class="social-btn bg-blue-600 text-white py-2 px-4 rounded-md flex items-center justify-center hover:bg-blue-700 transition">
+                            <i class="fab fa-facebook-f mr-2"></i> Facebook
+                        </a>
+                        <a href="#" class="social-btn bg-red-600 text-white py-2 px-4 rounded-md flex items-center justify-center hover:bg-red-700 transition">
+                            <i class="fab fa-google mr-2"></i> Google
+                        </a>
+                    </div>
+                    
+                    <p class="text-center text-gray-600">
+                        নতুন ব্যবহারকারী? <button id="switch-to-register" class="text-primary font-medium hover:text-secondary">এখানে রেজিস্টার করুন</button>
+                    </p>
+                </form>
+            </div>
+
+            <!-- Register Form (Hidden by default) -->
+            <div id="register-form" class="p-6 hidden">
+                <h2 class="text-2xl font-bold text-primary mb-6">একটি নতুন অ্যাকাউন্ট তৈরি করুন</h2>
+                
+                <form>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div>
+                            <label for="first-name" class="block text-gray-700 mb-2">প্রথম নাম</label>
+                            <input type="text" id="first-name" class="form-input w-full p-3 border border-gray-300 rounded-md focus:outline-none" placeholder="প্রথম নাম">
+                        </div>
+                        <div>
+                            <label for="last-name" class="block text-gray-700 mb-2">শেষ নাম</label>
+                            <input type="text" id="last-name" class="form-input w-full p-3 border border-gray-300 rounded-md focus:outline-none" placeholder="শেষ নাম">
+                        </div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="register-email" class="block text-gray-700 mb-2">ইমেইল ঠিকানা</label>
+                        <input type="email" id="register-email" class="form-input w-full p-3 border border-gray-300 rounded-md focus:outline-none" placeholder="আপনার ইমেইল ঠিকানা">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="register-password" class="block text-gray-700 mb-2">পাসওয়ার্ড</label>
+                        <input type="password" id="register-password" class="form-input w-full p-3 border border-gray-300 rounded-md focus:outline-none" placeholder="পাসওয়ার্ড (ন্যূনতম ৮ অক্ষর)">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label for="confirm-password" class="block text-gray-700 mb-2">পাসওয়ার্ড নিশ্চিত করুন</label>
+                        <input type="password" id="confirm-password" class="form-input w-full p-3 border border-gray-300 rounded-md focus:outline-none" placeholder="পাসওয়ার্ড আবার লিখুন">
+                    </div>
+                    
+                    <div class="mb-4">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded text-primary focus:ring-primary">
+                            <span class="ml-2 text-gray-700">আমি <a href="#" class="text-primary hover:text-secondary">সেবার শর্তাবলী</a> এবং <a href="#" class="text-primary hover:text-secondary">গোপনীয়তা নীতি</a> পড়েছি এবং সম্মত</span>
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary text-white py-3 rounded-md hover:bg-opacity-90 mb-6">রেজিস্টার করুন</button>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="flex-grow border-t border-gray-300"></div>
+                        <span class="mx-4 text-gray-500">অথবা</span>
+                        <div class="flex-grow border-t border-gray-300"></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <a href="#" class="social-btn bg-blue-600 text-white py-2 px-4 rounded-md flex items-center justify-center hover:bg-blue-700 transition">
+                            <i class="fab fa-facebook-f mr-2"></i> Facebook
+                        </a>
+                        <a href="#" class="social-btn bg-red-600 text-white py-2 px-4 rounded-md flex items-center justify-center hover:bg-red-700 transition">
+                            <i class="fab fa-google mr-2"></i> Google
+                        </a>
+                    </div>
+                    
+                    <p class="text-center text-gray-600">
+                        ইতিমধ্যে অ্যাকাউন্ট আছে? <button id="switch-to-login" class="text-primary font-medium hover:text-secondary">লগইন করুন</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="bg-gray-100 py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="text-2xl font-bold text-center text-primary mb-12">জবইউনিটিতে যোগ দিয়ে উপকৃত হন</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">হাজার হাজার চাকরির সুযোগ</h3>
+                    <p class="text-gray-700">বাংলাদেশের শীর্ষ কোম্পানিগুলো থেকে চাকরির সুযোগ খুঁজুন</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">ক্যারিয়ার গাইডেন্স</h3>
+                    <p class="text-gray-700">পেশাদারী পরামর্শ এবং ক্যারিয়ার টিপস পান</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="text-4xl text-primary mb-4">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">কাস্টমাইজড অ্যালার্ট</h3>
+                    <p class="text-gray-700">আপনার পছন্দ অনুযায়ী চাকরির নোটিফিকেশন পান</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-white text-xl font-semibold mb-4 flex items-center">
+                        <i class="fas fa-briefcase mr-2"></i>
+                        জবইউনিটি
+                    </h3>
+                    <p class="mb-4">বাংলাদেশের সেরা চাকরি খোঁজার প্ল্যাটফর্ম। যোগ্যতা অনুযায়ী সেরা চাকরির সুযোগ খুঁজে নিন।</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center hover:bg-primary">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">প্রার্থীদের জন্য</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">প্রোফাইল তৈরি করুন</a></li>
+                        <li><a href="#" class="hover:text-white">চাকরি খুঁজুন</a></li>
+                        <li><a href="#" class="hover:text-white">রেজিউমি বিল্ডার</a></li>
+                        <li><a href="#" class="hover:text-white">ক্যারিয়ার টিপস</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">নিয়োগকর্তাদের জন্য</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-white">কোম্পানি প্রোফাইল</a></li>
+                        <li><a href="#" class="hover:text-white">চাকরি পোস্ট করুন</a></li>
+                        <li><a href="#" class="hover:text-white">প্রার্থী খুঁজুন</a></li>
+                        <li><a href="#" class="hover:text-white">প্রাইসিং</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white text-lg font-semibold mb-4">যোগাযোগ</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-primary"></i>
+                            <span>১২৩ চাকরি স্ট্রিট, ঢাকা ১২০৫</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3 text-primary"></i>
+                            <span>+৮৮০ ১২৩৪ ৫৬৭৮৯০</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3 text-primary"></i>
+                            <span>info@jobunity.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; ২০২৩ জবইউনিটি. সর্বস্বত্ব সংরক্ষিত। | <a href="#" class="hover:text-white">গোপনীয়তা নীতি</a> | <a href="#" class="hover:text-white">সেবার শর্তাবলী</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        const loginTab = document.getElementById('login-tab');
+        const registerTab = document.getElementById('register-tab');
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        const switchToRegister = document.getElementById('switch-to-register');
+        const switchToLogin = document.getElementById('switch-to-login');
+
+        function showLogin() {
+            loginTab.classList.add('active');
+            registerTab.classList.remove('active');
+            loginForm.classList.remove('hidden');
+            registerForm.classList.add('hidden');
+        }
+
+        function showRegister() {
+            registerTab.classList.add('active');
+            loginTab.classList.remove('active');
+            registerForm.classList.remove('hidden');
+            loginForm.classList.add('hidden');
+        }
+
+        loginTab.addEventListener('click', showLogin);
+        registerTab.addEventListener('click', showRegister);
+        switchToRegister.addEventListener('click', showRegister);
+        switchToLogin.addEventListener('click', showLogin);
+    </script>
+</body>
+</html>
